@@ -762,18 +762,23 @@ console.log(tree(3));
 
 */
 
-// I don't like how the code turned out but I didn't really manage to make it more elegant. At least it works for every number now.
+// Not the most elegant solution but at least it handles everything. Returns undefined for anything that is not a natural number (including zero) because primes are per definition natural numbers
 function isItPrime(n) {
-    let isIt = true;
-    if (n < 2) {
-        isIt = false;
-    } else {
-        for (let i = 2; i < n; i++) {
-            if (n % i === 0) {
-                isIt = false;
+    let isIt;
+    if (Number.isInteger(n) && n > 0) {
+        if (n == 1) {
+            isIt = false;
+        } else {
+            isIt = true;
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0) {
+                    isIt = false;
+                };
             };
         };
-    };
+    } else {
+        console.log("Not a valid input");
+    }
     return isIt;
 };
 
@@ -783,3 +788,4 @@ console.log(isItPrime(2))
 console.log(isItPrime(23))
 console.log(isItPrime(42))
 console.log(isItPrime(-42))
+console.log(isItPrime("hi"))
