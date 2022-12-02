@@ -399,12 +399,15 @@ Write a function called isThisAnEmail which receives a string as a parameter and
 */
 
 function isThisAnEmail(str) {
-    return (/^[a-zA-Z]+[a-zA-Z0-9_.]+@[a-zA-Z.]+[a-zA-Z]$/).test(str);
+    return ( /^[a-zA-Z0-9]+([?_.-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-z]+$/ ).test(str);
 }
 
 console.log("\nExercise 6");
 console.log(isThisAnEmail("me@something.com"));
+console.log(isThisAnEmail("me-400@something.com"));
+console.log(isThisAnEmail("me__me@something.com"));
 console.log(isThisAnEmail("mayonnaise"));
+return;
 
 /* EXERCISE 7
 
@@ -753,6 +756,7 @@ function tree(n) {
         tree = tree.concat("\n\n");
         i++;
     }
+    //tree = tree.concat((" ".repeat(n-1) + "*" + " ".repeat(n-1) + "\n\n").repeat(Math.floor(n/2))); //trunk time
     return tree;
 }
 
@@ -784,9 +788,9 @@ function isItPrime(n) {
 };
 
 console.log("\nExercise 23");
-console.log(isItPrime(1))
-console.log(isItPrime(2))
-console.log(isItPrime(23))
-console.log(isItPrime(42))
-console.log(isItPrime(-42))
-console.log(isItPrime("hi"))
+console.log(isItPrime(1));
+console.log(isItPrime(2));
+console.log(isItPrime(23));
+console.log(isItPrime(42));
+console.log(isItPrime(-42));
+console.log(isItPrime("hi"));
