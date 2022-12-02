@@ -715,7 +715,7 @@ function halfTree(n) {
     let tree = "";
     while (i <= n) {
         tree = tree.concat("*".repeat(i));
-        tree = tree.concat("\n");
+        tree = tree.concat("\n\n");
         i++;
     }
     return tree;
@@ -750,7 +750,7 @@ function tree(n) {
         let row = "*".repeat(1 + 2 * i);
         let space = " ".repeat((maxWidth - row.length) / 2);
         tree = tree.concat(space + row + space);
-        tree = tree.concat("\n");
+        tree = tree.concat("\n\n");
         i++;
     }
     return tree;
