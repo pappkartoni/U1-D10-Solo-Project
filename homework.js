@@ -407,7 +407,6 @@ console.log(isThisAnEmail("me@something.com"));
 console.log(isThisAnEmail("me-400@something.com"));
 console.log(isThisAnEmail("me__me@something.com"));
 console.log(isThisAnEmail("mayonnaise"));
-return;
 
 /* EXERCISE 7
 
