@@ -740,17 +740,17 @@ tree(3)
 
 */
 
-// Honestly I think there is a better way to declare i and to maybe not build the tree backwards but this is what i came up with first so i will only fix this if i have the time
+// Managed to turn it around!
 function tree(n) {
-    let i = n;
+    let i = 0;
     let tree = "";
     let maxWidth = 2 * (n-1) + 1
-    while (i > 0) {
-        let row = "*".repeat(1 + 2 * (i - 1));
+    while (i < n) {
+        let row = "*".repeat(1 + 2 * i);
         let space = " ".repeat((maxWidth - row.length) / 2);
-        tree = (space + row + space).concat(tree);
-        tree = "\n".concat(tree);
-        i--;
+        tree = tree.concat(space + row + space);
+        tree = tree.concat("\n");
+        i++;
     }
     return tree;
 }
@@ -762,9 +762,12 @@ console.log(tree(3));
 
 */
 
+// I don't like how the code turned out but I didn't really manage to make it more elegant. At least it works for every number now.
 function isItPrime(n) {
     let isIt = true;
-    if (n !== 1) {
+    if (n < 2) {
+        isIt = false;
+    } else {
         for (let i = 2; i < n; i++) {
             if (n % i === 0) {
                 isIt = false;
@@ -779,3 +782,4 @@ console.log(isItPrime(1))
 console.log(isItPrime(2))
 console.log(isItPrime(23))
 console.log(isItPrime(42))
+console.log(isItPrime(-42))
