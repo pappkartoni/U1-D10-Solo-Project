@@ -399,7 +399,7 @@ Write a function called isThisAnEmail which receives a string as a parameter and
 */
 
 function isThisAnEmail(str) {
-    return (/^[a-zA-Z]+[a-zA-Z0-9_.]+@[a-zA-Z.]+[a-zA-Z]$/).test(str); //this was suggested to me by the group
+    return (/^[a-zA-Z]+[a-zA-Z0-9_.]+@[a-zA-Z.]+[a-zA-Z]$/).test(str);
 }
 
 console.log("\nExercise 6");
@@ -484,6 +484,7 @@ Write a function called isTodayMyBirthday which should return true if today’s 
 */
 
 // I chose to give the function an input to make it more flexible rather than just check if month is may and day is 12th
+// I know this is technically not quite what was expected here but it's literally the same code except you pass the birthdate instead of declaring it in the function
 function isTodayMyBirthday(someDate) {
     let today = new Date();
     return (today.getDate() === someDate.getDate()) && (today.getMonth() === someDate.getMonth());
@@ -756,7 +757,7 @@ function tree(n) {
 }
 
 console.log("\nExercise 22");
-console.log(tree(3));
+console.log(tree(6));
 
 /* EXERCISE 23
 
